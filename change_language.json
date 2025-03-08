@@ -2,249 +2,114 @@
   "title": "Language toggler",
   "rules": [
     {
-      "description": "Left_Shift+Left_Command language toggle (en->ru->en...)",
+      "description": "Toggle language with Left Command↔Shift or Right Command↔Shift (sequential press)",
       "manipulators": [
         {
-          "conditions": [
-            {
-              "type": "input_source_if",
-              "input_sources": [
-                {
-                  "language": "en"
-                }
-              ]
-            }
-          ],
           "type": "basic",
           "from": {
             "key_code": "left_shift",
             "modifiers": {
-              "mandatory": [
-                "left_command"
-              ]
+              "mandatory": ["left_command"],
+              "optional": ["any"]
             }
           },
-          "to_if_alone": [
-            {
-              "select_input_source": {
-                "language": "ru"
-              }
-            }
-          ]
+          "to_if_alone": [{"select_input_source": {"language": "ru"}}],
+          "conditions": [{"type": "input_source_if","input_sources": [{"language": "en"}]}],
+          "to": [{"key_code": "left_shift","modifiers": ["left_command"]}]
         },
         {
-          "conditions": [
-            {
-              "type": "input_source_if",
-              "input_sources": [
-                {
-                  "language": "ru"
-                }
-              ]
-            }
-          ],
           "type": "basic",
           "from": {
             "key_code": "left_shift",
             "modifiers": {
-              "mandatory": [
-                "left_command"
-              ]
+              "mandatory": ["left_command"],
+              "optional": ["any"]
             }
           },
-          "to_if_alone": [
-            {
-              "select_input_source": {
-                "language": "en"
-              }
-            }
-          ]
-        }
-      ]
-    },
+          "to_if_alone": [{"select_input_source": {"language": "en"}}],
+          "conditions": [{"type": "input_source_if","input_sources": [{"language": "ru"}]}],
+          "to": [{"key_code": "left_shift", "modifiers": ["left_command"]}]
+        },
 
-    {
-      "description": "Left_Command+Left_Shift language toggle (en->ru->en...)",
-      "manipulators": [
         {
-          "conditions": [
-            {
-              "type": "input_source_if",
-              "input_sources": [
-                {
-                  "language": "en"
-                }
-              ]
-            }
-          ],
           "type": "basic",
           "from": {
             "key_code": "left_command",
             "modifiers": {
-              "mandatory": [
-                "left_shift"
-              ]
+              "mandatory": ["left_shift"],
+              "optional": ["any"]
             }
           },
-          "to_if_alone": [
-            {
-              "select_input_source": {
-                "language": "ru"
-              }
-            }
-          ]
+          "to_if_alone": [{"select_input_source": {"language": "ru"}}],
+          "conditions": [{"type": "input_source_if","input_sources": [{"language": "en"}]}],
+          "to": [{"key_code": "left_command", "modifiers": ["left_shift"]}]
         },
         {
-          "conditions": [
-            {
-              "type": "input_source_if",
-              "input_sources": [
-                {
-                  "language": "ru"
-                }
-              ]
-            }
-          ],
           "type": "basic",
           "from": {
             "key_code": "left_command",
             "modifiers": {
-              "mandatory": [
-                "left_shift"
-              ]
+              "mandatory": ["left_shift"],
+              "optional": ["any"]
             }
           },
-          "to_if_alone": [
-            {
-              "select_input_source": {
-                "language": "en"
-              }
-            }
-          ]
-        }
-      ]
-    },
-
-    {
-      "description": "Right_Command+Right_Shift language toggle (en->ru->en...)",
-      "manipulators": [
-        {
-          "conditions": [
-            {
-              "type": "input_source_if",
-              "input_sources": [
-                {
-                  "language": "en"
-                }
-              ]
-            }
-          ],
-          "type": "basic",
-          "from": {
-            "key_code": "right_command",
-            "modifiers": {
-              "mandatory": [
-                "right_shift"
-              ]
-            }
-          },
-          "to_if_alone": [
-            {
-              "select_input_source": {
-                "language": "ru"
-              }
-            }
-          ]
+          "to_if_alone": [{"select_input_source": {"language": "en"}}],
+          "conditions": [{"type": "input_source_if","input_sources": [{"language": "ru"}]}],
+          "to": [{"key_code": "left_command", "modifiers": ["left_shift"]}]
         },
-        {
-          "conditions": [
-            {
-              "type": "input_source_if",
-              "input_sources": [
-                {
-                  "language": "ru"
-                }
-              ]
-            }
-          ],
-          "type": "basic",
-          "from": {
-            "key_code": "right_command",
-            "modifiers": {
-              "mandatory": [
-                "right_shift"
-              ]
-            }
-          },
-          "to_if_alone": [
-            {
-              "select_input_source": {
-                "language": "en"
-              }
-            }
-          ]
-        }
-      ]
-    },
 
-    {
-      "description": "Right_Shift+Right_Command language toggle (en->ru->en...)",
-      "manipulators": [
         {
-          "conditions": [
-            {
-              "type": "input_source_if",
-              "input_sources": [
-                {
-                  "language": "en"
-                }
-              ]
-            }
-          ],
           "type": "basic",
           "from": {
             "key_code": "right_shift",
             "modifiers": {
-              "mandatory": [
-                "right_command"
-              ]
+              "mandatory": ["right_command"],
+              "optional": ["any"]
             }
           },
-          "to_if_alone": [
-            {
-              "select_input_source": {
-                "language": "ru"
-              }
-            }
-          ]
+          "to_if_alone": [{"select_input_source": {"language": "ru"}}],
+          "conditions": [{"type": "input_source_if","input_sources": [{"language": "en"}]}],
+          "to": [{"key_code": "right_shift", "modifiers": ["right_command"]}]
         },
         {
-          "conditions": [
-            {
-              "type": "input_source_if",
-              "input_sources": [
-                {
-                  "language": "ru"
-                }
-              ]
-            }
-          ],
           "type": "basic",
           "from": {
             "key_code": "right_shift",
             "modifiers": {
-              "mandatory": [
-                "right_command"
-              ]
+              "mandatory": ["right_command"],
+              "optional": ["any"]
             }
           },
-          "to_if_alone": [
-            {
-              "select_input_source": {
-                "language": "en"
-              }
+          "to_if_alone": [{"select_input_source": {"language": "en"}}],
+          "conditions": [{"type": "input_source_if","input_sources": [{"language": "ru"}]}],
+          "to": [{"key_code": "right_shift", "modifiers": ["right_command"]}]
+        },
+
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "right_command",
+            "modifiers": {
+              "mandatory": ["right_shift"],
+              "optional": ["any"]
             }
-          ]
+          },
+          "to_if_alone": [{"select_input_source": {"language": "ru"}}],
+          "conditions": [{"type": "input_source_if","input_sources": [{"language": "en"}]}],
+          "to": [{"key_code": "right_command", "modifiers": ["right_shift"]}]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "right_command",
+            "modifiers": {
+              "mandatory": ["right_shift"],
+              "optional": ["any"]
+            }
+          },
+          "to_if_alone": [{"select_input_source": {"language": "en"}}],
+          "conditions": [{"type": "input_source_if","input_sources": [{"language": "ru"}]}],
+          "to": [{"key_code": "right_command", "modifiers": ["right_shift"]}]
         }
       ]
     }
